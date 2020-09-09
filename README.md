@@ -1,5 +1,11 @@
 # spring-pharma
-A Spring Boot Application build with postgres
+A Spring Boot Application build with postgres With Docker Postgres
+
+## Install Docker
+### Install postgres instance
+``` Command 
+docker run -d -p 5432:5432 --name my-postgres -e POSTGRES_PASSWORD=postgres postgres
+```
 
 ## URL end-points
 
