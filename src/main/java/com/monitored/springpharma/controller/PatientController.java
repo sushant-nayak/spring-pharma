@@ -16,30 +16,30 @@ public class PatientController {
     @PostMapping("/patient")
     public String savePatientDataJson(@RequestBody Patient patient){
 
-        if(patient == null){
-            return "Please provide a valid patient data.";
-        }
-
-        dao.save(patient);
-
-        return "Saved record successful";
+        return savePatientRecord(patient);
     }
 
     @PostMapping(value = "/datapoint", consumes = MediaType.APPLICATION_XML_VALUE)
     public String savePatientDataXml(@RequestBody(required = false) Patient patient){
 
-        if(patient == null){
-            return "Please provide a valid patient data.";
-        }
-
-        dao.save(patient);
-
-        return "Saved record successful";
+        return savePatientRecord(patient);
     }
 
     @GetMapping("/patientRecords")
     public Iterable<Patient> getPatientData(){
 
         return dao.findAll();
+    }
+
+    private String savePatientRecord(Patient patient) {
+        if(patient == null){
+            return "Please provide a valid patient data.";
+        }
+
+        if(dao.save(patient) instanceof PatientDao){
+            return "Record saved Successfully";
+        }
+
+        return "Record saved Unsuccessfully";
     }
 }
