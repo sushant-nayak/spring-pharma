@@ -6,7 +6,7 @@ A Spring Boot Application build with postgres
 ### Post JSON data
 http://localhost:9090/patient
 Payload (example) - 
-
+```json
 {
     "firstName": "Adam",
     "lastName": "Sandler",
@@ -17,11 +17,13 @@ Payload (example) -
     "phoneNumber": "6140001234",
     "email": "adam.sandler@outlook.com"
 }
+```
 
 ### Post XML data
 http://localhost:9090/datapoint
 Payload (example) - 
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <patient>
    <address>123 Main St</address>
@@ -33,7 +35,7 @@ Payload (example) -
    <state>Ohio</state>
    <zipCode>43201</zipCode>
 </patient>
-
+```
 
 ### Get all patient records in JSON format
 http://localhost:9090/patientRecords

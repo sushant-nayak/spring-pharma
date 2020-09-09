@@ -26,6 +26,12 @@ public class PatientController {
     }
 
     @GetMapping("/patientRecords")
+    public Iterable<Patient> patientRecords(){
+
+        return dao.findAll();
+    }
+
+    @GetMapping(value = "/patientData", produces = MediaType.APPLICATION_XML_VALUE)
     public Iterable<Patient> getPatientData(){
 
         return dao.findAll();
