@@ -36,7 +36,7 @@ public class PatientController {
             return "Please provide a valid patient data.";
         }
 
-        if(dao.save(patient) instanceof PatientDao){
+        if(dao.save(patient) instanceof Patient){
             return "Record saved Successfully";
         }
 

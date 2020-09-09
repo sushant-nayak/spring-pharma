@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="public.patient")
+@Table(name="patient")
 @Getter
 @Setter
 @NoArgsConstructor
